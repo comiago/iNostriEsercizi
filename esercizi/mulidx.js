@@ -7,7 +7,7 @@ function mulidx(a){
     let b = [];
     for(let i = 0; i < a.length; i++) {
         if (typeof a[i] === 'number' && a[i] % i == 0 || a[i] == 0)b.push(a[i]);
-        else if (typeof a[i] === 'string' && a[i].length % i == 0)b.push(a[i]);
+        else if (typeof a[i] === 'string' && a[i].length % i == 0 || a[i].length == 0)b.push(a[i]);
     }
     return b;
 }

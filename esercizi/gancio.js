@@ -16,7 +16,7 @@ function gancio(a){
     for (let i = 1; i < a.length; i++) {
         if (a[i - 1] == a[i + 1] && a[i - 1] != a[i]){
             ganci.num++;
-            if (a[i] < a[i + 1]) ganci.asc++;
+            if (a[i] > a[i + 1]) ganci.asc++;
             else ganci.des++;
             ganci.gan.push([a[i - 1], a[i], a[i + 1]]);
         }
