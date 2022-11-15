@@ -24,5 +24,5 @@ function verifica2(t){
     return ((t.sx && t.val >= t.sx.val) && (t.dx && t.val >= t.dx.val)) && verifica2(t.sx) && verifica2(t.dx)
 }
 
-Q = {val: 9, sx: {val: 7, sx: {val: 6}, dx: {val: 6, dx:{val: 14}}}, dx: {val: 9, sx: {val: 7}}}
+Q = {val: 9, sx: {val: 9, sx: {val: 6}, dx: {val: 7, dx:{val: 14}}}, dx: {val: 9, sx: {val: 7}}}
 console.log(verifica(Q))
