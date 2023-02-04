@@ -1,5 +1,7 @@
 /*
-Si scriva una funzione produttoria(a, b) che, dati come argomenti due interi positivi a e b, con a <= b, restituisca il prodotto di tutti gli interi fra a e b, estremi compresi.
+Si scriva una funzione produttoria(a, b) che, dati come argomenti due interi positivi 
+a e b, con a <= b, restituisca il prodotto di tutti gli interi fra a e b, estremi 
+compresi.
 */
 
 function produttoria(a, b) {

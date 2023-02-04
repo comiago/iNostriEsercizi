@@ -12,4 +12,4 @@ let t={val:20, sx:{val:19, sx:{val:8}, dx:{val:7, sx:{val:9}}}, dx:{val:-3, sx:{
 let st={val:1, sx:{val:1}, dx:{val:1}}
 
 innestaSottoAlberi(t, st);
-console.log(t, st)
+console.log(t)

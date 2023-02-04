@@ -1,0 +1,6 @@
+function partition_until(arr, depth) {
+    if(depth == 0 || arr.length == 1) return [arr];
+    let len = Math.ceil(arr.length / 2)
+    return [partition_until(arr.slice(0, len), depth - 1), partition_until(arr.slice(len, arr.length), depth - 1)];
+}
+console.log(partition_until([1, 2, 3, 4, -1, -2, -3, 8, 16], 2));
