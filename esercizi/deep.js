@@ -1,27 +1,46 @@
 function deep(t) {
-    if(t == undefined) return undefined
-    if(t.sx == undefined && t.dx == undefined) return t.val
+    if(!t) return undefined;
+    if(!t.sx && !t.dx) return t.val;
 
-    sx = deep(t.sx)
-    dx = deep(t.dx)
+    let sx = deep(t.sx);
+    let dx = deep(t.dx);
 
-    if(sx) return sx
-    return dx
+    return (sx) ? sx : dx;
 }
 
-let t = {val: 1,
-    sx: {val: 5, sx: {val: 9}},
-    dx: {
-        val: 3,
-        sx: {val: 2,
-            sx: {
-                val: 4, 
-                sx: {val: 8},
-                dx: {val: 6, dx: {val: 'c'}}
-            }
-        },
-        dx: {val: 7}
+function deepLuca(T){
+    if(!T)
+        return undefined
+    maxDeep=-1
+    maxVal=T.val
+    function run(t,liv){
+        if(!t)
+            return undefined
+        if(liv > maxDeep){
+            maxVal=t.val
+            maxDeep=liv
+        }
+        sx=run(t.sx,liv+1)
+        dx=run(t.dx,liv+1)
     }
+    run(T,0)
+    return maxVal
 }
 
-console.log(deep(t))
+var T=
+{   val: 5,
+    sx: {   val: 7,
+            sx: {   val: 'c' },
+            dx: {   val: 5,
+                    sx: {val: 10}
+                }
+        },
+    dx: {   val: 'a',
+            sx: {   val: 'b',
+                    dx: {val: 7}
+                },
+            dx: {   val: 1}
+        }
+}
+
+console.log(deep(T))
